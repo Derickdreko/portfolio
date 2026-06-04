@@ -47,6 +47,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 20px;
+    position: relative;
 }
 
 .nav-brand {
@@ -59,6 +60,30 @@ body {
     display: flex;
     list-style: none;
     gap: 2rem;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-white);
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-menu.active {
+    max-height: 300px;
+}
+
+.nav-menu li {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-menu li a {
+    display: block;
+    padding: 1rem 20px;
 }
 
 .nav-menu a {
@@ -74,7 +99,7 @@ body {
 
 /* Hamburger Menu */
 .hamburger {
-    display: none;
+    display: flex;
     flex-direction: column;
     cursor: pointer;
     border: none;
@@ -237,48 +262,80 @@ body {
     text-align: center;
 }
 .contact {
+    padding: 80px 20px;
+    background-color: var(--bg-light);
+    min-height: calc(100vh - 200px);
+}
+
+.contact h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
     text-align: center;
-}
-.contact-subtitle {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    color: var(--text-light);
-}
-.contact-info {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    color: var(--text-color);
 }
 
-.contact-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: var(--primary-color);
+.contact-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-method {
+    background-color: var(--bg-white);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.contact-method:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.contact-method .contact-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
+    border-radius: 50%;
+    background: var(--primary-color);
     transition: all 0.3s ease;
-    overflow: hidden;
 }
 
-.contact-icon img {
+.contact-method:hover .contact-icon {
+    transform: scale(1.1);
+}
+
+.contact-method .contact-icon img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.contact-icon:hover {
-    transform: translateY(-5px) scale(1.1);
+.contact-method h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.contact-method p {
+    display: none;
 }
 
 .whatsapp-icon {
-    background: #25D366;
+    background: #25D366 !important;
 }
 /* Footer */
 .footer {
@@ -313,38 +370,6 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-menu {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: var(--bg-white);
-        flex-direction: column;
-        gap: 0;
-        list-style: none;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .nav-menu.active {
-        max-height: 300px;
-    }
-
-    .nav-menu li {
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .nav-menu li a {
-        display: block;
-        padding: 1rem 20px;
-    }
-
     .hero-container {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -374,8 +399,17 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .contact-info {
-        gap: 1.5rem;
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-method {
+        padding: 1.5rem;
+    }
+
+    .contact-method .contact-icon {
+        width: 80px;
+        height: 80px;
     }
 
     .footer-content {
