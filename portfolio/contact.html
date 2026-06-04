@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Derick Otieno Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Derick Otieno</div>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="contact-subtitle">I'd love to hear from you. Let's work together!</p>
+
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <a href="mailto:deickotienos11@gmail.com" class="contact-icon" title="Email">
+                        <img src="mail.png" alt="Email">
+                    </a>
+                    <h3>Email</h3>
+                    <p><a href="mailto:deickotienos11@gmail.com">deickotienos11@gmail.com</a></p>
+                </div>
+
+                <div class="contact-method">
+                    <a href="tel:+254748769210" class="contact-icon" title="Call Me">
+                        <img src="call.png" alt="Call">
+                    </a>
+                    <h3>Phone</h3>
+                    <p><a href="tel:+254748769210">+254 748 769 210</a></p>
+                </div>
+
+                <div class="contact-method">
+                    <a href="https://wa.me/254748769210" target="_blank" class="contact-icon whatsapp-icon" title="WhatsApp">
+                        <img src="whats.png" alt="WhatsApp">
+                    </a>
+                    <h3>WhatsApp</h3>
+                    <p><a href="https://wa.me/254748769210" target="_blank">Chat on WhatsApp</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Derick Otieno. All rights reserved.</p>
+
+                <div class="social-links">
+                    <a href="https://github.com/Derickdreko" target="_blank" title="GitHub">
+                        GitHub
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/derick-otieno-355579390?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" title="LinkedIn">
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
