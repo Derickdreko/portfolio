@@ -250,7 +250,7 @@ body {
 }
 .contact {
     padding: 80px 20px;
-    background-color: var(--bg-light);
+    background-color:#c9d4eb;
     min-height: calc(100vh - 200px);
 }
 
@@ -264,7 +264,7 @@ body {
 .contact-subtitle {
     font-size: 1.25rem;
     margin-bottom: 3rem;
-    color: var(--text-light);
+    color:#1f2937;
     text-align: center;
 }
 
@@ -276,12 +276,12 @@ body {
 }
 
 .contact-method {
-    background-color: var(--bg-white);
+    background-color:#14afca;
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(29, 26, 26, 0.08);
+    transition: all 0.5s ease;
 }
 
 .contact-method:hover {
