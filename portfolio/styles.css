@@ -151,7 +151,7 @@ body {
 .hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    font-weight: 1000;
+    font-weight: bolder;
     color: black;
 }
 
@@ -167,6 +167,7 @@ body {
     margin-bottom: 2rem;
     opacity: 0.85;
     color: black;
+    font-weight:800;
 }
 
 /* Buttons */
